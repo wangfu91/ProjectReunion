@@ -30,23 +30,23 @@ Packaged processes (i.e. a process with package identity) are created with a sta
 
 Processes without package identity have an no static package graph. They can modify their package graph using the Dynamic Dependency API.
 
-MddPinPackageDependency defines a package dependency.
+```MddPinPackageDependency``` defines a package dependency.
 
-MddAddPackageDependency determines a package that satisfies a package dependency and updates the caller's process. This includes adding the resolved package to the process' package graph, updating the Loader to include the resolved package in the DLL Search Order, etc. The package dependency is resolved to a specific package if not already resolved.
+```MddAddPackageDependency``` determines a package that satisfies a package dependency and updates the caller's process. This includes adding the resolved package to the process' package graph, updating the Loader to include the resolved package in the DLL Search Order, etc. The package dependency is resolved to a specific package if not already resolved.
 
-A resolved PackageDependency is represented by MDD_PACKAGE_DEPENDENCY_CONTEXT.
+A resolved PackageDependency is represented by ```MDD_PACKAGE_DEPENDENCY_CONTEXT```.
 
-Once a PackageDependency is resolved to a package all further MddAddPackageDependency calls yield the same result until the package dependency is unresolved. Resolved package dependencies are tracked by User + PackageDependencyId. This ensures multiple overlapping calls to MddAddPackageDependency yield the same result. A package dependency is unresolved when the last MDD_PACKAGE_DEPENDENCY_CONTEXT is closed (via MddRemovePackageDependency or process termination).
+Once a PackageDependency is resolved to a package all further ```MddAddPackageDependency``` calls yield the same result until the package dependency is unresolved. Resolved package dependencies are tracked by User + PackageDependencyId. This ensures multiple overlapping calls to ```MddAddPackageDependency``` yield the same result. A package dependency is unresolved when the last ```MDD_PACKAGE_DEPENDENCY_CONTEXT``` is closed (via ```MddRemovePackageDependency``` or process termination).
 
-MddRemovePackageDependency removes the resolved PackageDependency from the calling process' package graph.
+```MddRemovePackageDependency``` removes the resolved PackageDependency from the calling process' package graph.
 
-MddUnpinPackageDependency undefines a package dependency previously defined via MddPinPackageDependency.
+```MddUnpinPackageDependency``` undefines a package dependency previously defined via ```MddPinPackageDependency```.
 
 PackageDependency definitions and usage are tracked and managed on a per-user basis.
 
-PackageDependency definitions are not persisted or tracked across reboots if MddPinPackageDependency is called with MddMddPinPackageDependency::LifecycleHint_Process. Specify MddPinPackageDependency_LifecycleHint_FileOrPath or MddPinPackageDependency_LifecycleHint_RegistrySubkey for MddPinPackageDependency to persist the definition until explicitly removed via MddUnpinPackageDependency or the specified lifetime artifact is deleted.
+PackageDependency definitions are not persisted or tracked across reboots if ```MddPinPackageDependency``` is called with ```MddMddPinPackageDependency::LifecycleHint_Process```. Specify ```MddPinPackageDependency::LifecycleHint_FileOrPath``` or ```MddPinPackageDependency::LifecycleHint_RegistrySubkey``` for ```MddPinPackageDependency``` to persist the definition until explicitly removed via ```MddUnpinPackageDependency``` or the specified lifetime artifact is deleted.
 
-If concurrent processes need the same package resolution for a defined criteria they should share the packageDependencyId returned by MddPinPackageDependency. Concurrent processes running as the same user calling MddAddPackageDependency with the same packageDependencyId get the same resolved package added to their package graph. This enables multiple concurrent processes needing the same package resolution get a consistent answer.
+If concurrent processes need the same package resolution for a defined criteria they should share the packageDependencyId returned by ```MddPinPackageDependency```. Concurrent processes running as the same user calling ```MddAddPackageDependency``` with the same packageDependencyId get the same resolved package added to their package graph. This enables multiple concurrent processes needing the same package resolution get a consistent answer.
 
 Package dependencies can only be resolved to packages registered for a user. As packages cannot be registered for LocalSystem the Dynamic Dependencies feature is not available to callers running as LocalSystem.
 
