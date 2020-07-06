@@ -13,14 +13,14 @@ This feature providse APIs to enable access to packaged content at runtime, rega
 # Examples
 
 Samples illustrating the DynamicDependency APIs
-* Sample 1 - Fabrikam app using Contosso's Muffins package [Win32](sample-1.md) [WinRT](sample-1.md)
-* Sample 2 - Fabrikam app using Contosso's Muffins package with smart class helpers [Win32](sample-2.md) [WinRT](sample-2.md)
-* Sample 3 - LolzKitten app using Contosso's Muffins package via transient package dependency [Win32](sample-3.md) [WinRT](sample-3.md)
-* Sample 4 - LolzKitten Installer / Uninstaller with File+Registry LifetimeArtifacts [Win32](sample-4.md) [WinRT](sample-4.md)
-* Sample 5 - LolzKitten app using PackageDependency pinned by LolzKitten Installer [Win32](sample-5.md) [WinRT](sample-5.md)
-* Sample 6 - LolzKitten Installer / Uninstaller defining a 32bit PackageDependency [Win32](sample-6.md) [WinRT](sample-6.md)
-* Sample 7 - LolzKitten app ordering Packages in PackageGraph [Win32](sample-7.md) [WinRT](sample-7.md)
-* Sample 8 - LolzKitten app ordering Packages in PackageGraph with prepend [Win32](sample-8.md) [WinRT](sample-8.md)
+* [Sample 1](sample-1.md) - Fabrikam app using Contosso's Muffins package [\[Win32\]](sample-1.md#win32) [\[WinRT\]](sample-1.md#winrt)
+* [Sample 2](sample-2.md) - Fabrikam app using Contosso's Muffins package with smart class helpers [\[Win32\]](sample-2.md#win32) [\[WinRT\]](sample-2.md#winrt)
+* [Sample 3](sample-3.md) - LolzKitten app using Contosso's Muffins package via transient package dependency [\[Win32\]](sample-3.md#win32) [\[WinRT\]](sample-3.md#winrt)
+* [Sample 4](sample-4.md) - LolzKitten Installer / Uninstaller with File+Registry LifetimeArtifacts [\[Win32\]](sample-4.md#win32) [\[WinRT\]](sample-4.md#winrt)
+* [Sample 5](sample-5.md) - LolzKitten app using PackageDependency pinned by LolzKitten Installer [\[Win32\]](sample-5.md#win32) [\[WinRT\]](sample-5.md#winrt)
+* [Sample 6](sample-6.md) - LolzKitten Installer / Uninstaller defining a 32bit PackageDependency [\[Win32\]](sample-6.md#win32) [\[WinRT\]](sample-6.md#winrt)
+* [Sample 7](sample-7.md) - LolzKitten app ordering Packages in PackageGraph [\[Win32\]](sample-7.md#win32) [\[WinRT\]](sample-7.md#winrt)
+* [Sample 8](sample-8.md) - LolzKitten app ordering Packages in PackageGraph with prepend [\[Win32\]](sample-8.md#win32) [\[WinRT\]](sample-8.md#winrt)
 
 # Remarks
 
