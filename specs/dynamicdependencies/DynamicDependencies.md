@@ -546,3 +546,5 @@ Q:WinRT: How should 'lifetimeArtifact' and MddPinPackageDependency_LifecycleHint
 * String lifetimeArtifact; boolean isFile; boolean isReg; boolean isProcess; and only 1 can be true
 * ILifetimeArtifact property with multiple implementations e.g. FileLifetimeArtifact = { string file; } vs * RegistryLifetimeArtifact = { HKEY root; string subkey; } vs Process=null
 * ?
+
+Q:WinRT: How to express equivalent of PACKAGE_DEPENDENCY_RANK_DEFAULT?

@@ -56,8 +56,37 @@ HRESULT ManageMuffins(int& countOfMuffinsManaged)
 ## WinRT
 
 ```c#
-using Microsoft.ApplicationModel
+using Microsoft.ApplicationModel;
+using Windows.ApplicationModel;
+
+int ManageMuffins()
 {
-***TODO***
-}
+    int countOfMuffinsManaged = 0;
+
+    var packageFamilyName = "Contoso.muffins_1234567890abc";
+    PACKAGE_VERSION minVersion;
+    minVersion.Major = 87;
+    minVersion.Minor = 0;
+    minVersion.Build = 1234;
+    minVersion.Revision = 567;
+    var packageDependency = PackageDependency.Pin(packageFamilyName, minVersion, null);
+
+    var packageDependencyContext = PackageDependency.Add();
+    Console.WriteLine($"Managing muffins via {packageFullName}");
+
+    var assembly = Assembly.Load("Contoso-Muffins, Version=1.0.1967.0, Culture=neutral, PublicKeyToken=8744b20f8da049e3");
+    if (assembly == null)
+    {
+        Console.WriteLine("Unable to load assembly");
+    }
+    else
+    {
+        countOfMuffinsManaged = Contoso.Muffins.Manage();
+    }
+
+    packageDependencyContext.Remove();
+
+    packageDependency.Unpin();
+
+    return countOfMuffinsManaged;
 ```
