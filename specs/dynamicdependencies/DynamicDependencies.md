@@ -4,7 +4,7 @@ MSIX supports the ability for packaged applications to access components and oth
 
 Microsoft-internal task [23447728](https://task.ms/23447728)
 
-This is the spec for proposal microsoft/projectreunion#89 microsoft/ProjectReunion#89 #89 projectreunion#89
+This is the spec for proposal [MSIX Dynamic Dependencies - allow any process to use MSIX Framework packages #89](https://github.com/microsoft/ProjectReunion/issues/89).
 
 # Description
 
