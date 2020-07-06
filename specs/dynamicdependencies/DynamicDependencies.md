@@ -283,17 +283,17 @@ runtimeclass AddPackageDependencyOptions
     AddPackageDependencyOptions();
 
     /// The rank when adding the package dependency to a a package graph.
-    /// @note A package graph is sorted in ascending order from ```-infinity...0...+infinity```
+    /// @note A package graph is sorted in ascending order from -infinity...0...+infinity
     /// @note The default value is zero
     int Rank;
 
-    /// If a package dependency resolves to a package with dependencies and this option is ```true```
+    /// If a package dependency resolves to a package with dependencies and this option is true
     /// the dependencies are ignored; only the package is added to the package graph. By default
     /// a resolved package and its dependencies are added to the package graph.
     boolean OnlyUseFirstPackageFamily;
 
     /// If a package is added to a package graph with a package of the same rank (aka a collision on rank)
-    /// and this option is ```true``` the package is prepended to the set of packages of the same rank.
+    /// and this option is true the package is prepended to the set of packages of the same rank.
     /// By default packages are appended to the set of packages with the same rank.
     boolean PrependIfRankCollision;
 }
@@ -301,18 +301,18 @@ runtimeclass AddPackageDependencyOptions
 /// TBD
 runtimeclass PackageDependency
 {
-    /// Create an intstance of the package dependency identified by ```id```.
+    /// Create an intstance of the package dependency identified by id.
     PackageDependency(String id);
 
     /// Return the package dependency id.
     String Id { get; }
 
-    /// Return ```true`````` if the package dependencies would produce the same
+    /// Return true if the package dependencies would produce the same
     /// package when resolved e.g. whether they share the same packageFamilyName,
     /// minVersion, and packageDependencyProcessorArchitectures values.
     static boolean AreEquivalent(String packageDependencyId1, String packageDependencyId2);
 
-    /// Return ```true`````` if ```this``` and ```otherPackageDependency``` would produce the same
+    /// Return true if this and otherPackageDependency would produce the same
     /// package when resolved e.g. whether they share the same packageFamilyName,
     /// minVersion, and packageDependencyProcessorArchitectures values.
     boolean AreEquivalent(PackageDependency otherPackageDependency);
@@ -338,14 +338,14 @@ runtimeclass PackageDependency
     /// package (e.g. higher version) to satisfy the PackageDependency if/when
     /// one becomes available.
     ///
-    /// This method is equivalent to ```PinForUser(null,...)```.
+    /// This method is equivalent to PinForUser(null,...).
     ///
     /// @param packageFamilyName the package family to pin
     /// @param minVerrsion the minimum version to pin
     /// @param options additional options affecting the package dependency
     ///
     /// @note This fails if the package dependency cannot be resolved to a specific package.
-    ///       This package resolution check is skipped if ```MddPinPackageDependency.DoNotVerifyDependencyResolution```
+    ///       This package resolution check is skipped if MddPinPackageDependency.DoNotVerifyDependencyResolution
     ///       is specified. This is useful if a package satisfying the dependency
     ///       will be installed after the package dependency is defined.
     ///
@@ -383,7 +383,7 @@ runtimeclass PackageDependency
     /// @param options additional options affecting the package dependency
     ///
     /// @note This fails if the package dependency cannot be resolved to a specific package.
-    ///       This package resolution check is skipped if ```MddPinPackageDependency.DoNotVerifyDependencyResolution```
+    ///       This package resolution check is skipped if MddPinPackageDependency.DoNotVerifyDependencyResolution
     ///       is specified. This is useful for installers running as user contexts other than the target user
     ///       (e.g. installers running as LocalSystem) or if a package satisfying the dependency
     ///       will be installed after the package dependency is defined.
@@ -420,7 +420,7 @@ runtimeclass PackageDependency
     /// @param options additional options affecting the package dependency
     ///
     /// @note This fails if the package dependency cannot be resolved to a specific package.
-    ///       This package resolution check is skipped if ```MddPinPackageDependency.DoNotVerifyDependencyResolution```
+    ///       This package resolution check is skipped if MddPinPackageDependency.DoNotVerifyDependencyResolution
     ///       is specified. This is useful for installers pinning a package dependency for all users on a system.
     static PackageDependency PinForSystem(
         String packageFamilyName,
@@ -429,9 +429,9 @@ runtimeclass PackageDependency
 
     void Unpin();
 
-    /// Resolve a previously pinned ```PackageDependency``` to a specific package and
+    /// Resolve a previously pinned PackageDependency to a specific package and
     /// add it to the calling process' package graph. Once the dependency has
-    /// been added other code-loading methods (```LoadLibrary```, ```CoCreateInstance```, etc)
+    /// been added other code-loading methods (LoadLibrary, CoCreateInstance, etc)
     /// can find the binaries in the resolved package.
     ///
     /// Package resoution is specific to a user. The same package dependency can
@@ -441,8 +441,8 @@ runtimeclass PackageDependency
     /// A process' package graph is used to search for DLLs (per Dynamic-Link Library Search Order),
     /// WinRT objects and other resources; the caller can now load DLLs, activate
     /// WinRT objects and use other resources from the framework package until
-    /// ```PackageDependencyContext.Remove()``` is called (or the process ends).
-    /// The package dependency ```Id``` must match a package dependency defined
+    /// PackageDependencyContext.Remove() is called (or the process ends).
+    /// The package dependency Id must match a package dependency defined
     /// for the calling user or the system (via PinForSystem) or an exception is raised.
     ///
     /// Each successful call adds the resolve packaged to the
@@ -450,16 +450,16 @@ runtimeclass PackageDependency
     /// duplicate 'detection' or 'filtering' applied by the API (multiple
     /// references to a package is not harmful). Once resolution is complete
     /// the package stays resolved for that user until the last reference across
-    /// all processes for that user is removed via ```PackageDependencyContext.Remove()```
+    /// all processes for that user is removed via PackageDependencyContext.Remove()
     /// (or process termination).
     ///
-    /// Calls to ```Add()``` can be balanced by a ```PackageDependencyContext.Remove()```
+    /// Calls to Add() can be balanced by a PackageDependencyContext.Remove()
     /// to remove the entry from the package graph.
     PackageDependencyContext Add();
 
-    /// Resolve a previously pinned ```PackageDependency``` to a specific package and
+    /// Resolve a previously pinned PackageDependency to a specific package and
     /// add it to the calling process' package graph. Once the dependency has
-    /// been added other code-loading methods (```LoadLibrary```, ```CoCreateInstance```, etc)
+    /// been added other code-loading methods (LoadLibrary, CoCreateInstance, etc)
     /// can find the binaries in the resolved package.
     ///
     /// Package resoution is specific to a user. The same package dependency can
@@ -469,8 +469,8 @@ runtimeclass PackageDependency
     /// A process' package graph is used to search for DLLs (per Dynamic-Link Library Search Order),
     /// WinRT objects and other resources; the caller can now load DLLs, activate
     /// WinRT objects and use other resources from the framework package until
-    /// ```PackageDependencyContext.Remove()``` is called (or the process ends).
-    /// The package dependency ```Id``` must match a package dependency defined
+    /// PackageDependencyContext.Remove() is called (or the process ends).
+    /// The package dependency Id must match a package dependency defined
     /// for the calling user or the system (via PinForSystem) or an exception is raised.
     ///
     /// Each successful call adds the resolve packaged to the
@@ -478,17 +478,17 @@ runtimeclass PackageDependency
     /// duplicate 'detection' or 'filtering' applied by the API (multiple
     /// references to a package is not harmful). Once resolution is complete
     /// the package stays resolved for that user until the last reference across
-    /// all processes for that user is removed via ```PackageDependencyContext.Remove()```
+    /// all processes for that user is removed via PackageDependencyContext.Remove()
     /// (or process termination).
     ///
-    /// This adds the resolved package to the caller's package graph, per ```rank```.
+    /// This adds the resolved package to the caller's package graph, per rank.
     /// A process' package graph is a list of packages sorted by rank in ascending
-    /// order (```-infinity...0...+infinity```). If package(s) are present in the
-    /// package graph with the same rank```rank``` the resolved package is
+    /// order (-infinity...0...+infinity). If package(s) are present in the
+    /// package graph with the same rankrank the resolved package is
     /// (by default) added after others of the same rank. To add a package
-    /// before others of the same rank, specify ```PackageDependency.PrependIfRankCollision```.
+    /// before others of the same rank, specify PackageDependency.PrependIfRankCollision.
     ///
-    /// Calls to ```Add()``` can be balanced by a ```PackageDependencyContext.Remove()```
+    /// Calls to Add() can be balanced by a PackageDependencyContext.Remove()
     /// to remove the entry from the package graph.
     PackageDependencyContext Add(AddPackageDependencyOptions options);
 }
@@ -502,7 +502,7 @@ struct PackageDependencyContextId
 ///TBD
 runtimeclass PackageDependencyContext : ICloseable
 {
-    /// Create an intstance of the package dependency context identified by ```context```
+    /// Create an intstance of the package dependency context identified by context
     PackageDependencyContext(PackageDependencyContextId);
 
     /// Returns the package dependency context
@@ -511,13 +511,13 @@ runtimeclass PackageDependencyContext : ICloseable
     /// Returns the package full name of the resolved package for this context
     String PackageFullName { get; }
 
-    /// Return ```true``` if ```packageDependencyContext1``` and ```packageDependencyContext2```
+    /// Return true if packageDependencyContext1 and packageDependencyContext2
     /// are associated with the same resolved package.
     static boolean AreEquivalent(
         PackageDependencyContextId packageDependencyContextId1,
         PackageDependencyContextId packageDependencyContextId2);
 
-    /// Return ```true``` if ```this``` and ```otherPackageDependencyContext```
+    /// Return true if this and otherPackageDependencyContext
     /// are associated with the same resolved package.
     boolean AreEquivalent(PackageDependencyContext otherPackageDependencyContext);
 
