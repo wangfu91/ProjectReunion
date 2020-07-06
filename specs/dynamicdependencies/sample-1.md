@@ -57,6 +57,7 @@ HRESULT ManageMuffins(int& countOfMuffinsManaged)
 
 ```c#
 using Microsoft.ApplicationModel;
+using System.Reflection;
 using Windows.ApplicationModel;
 
 int ManageMuffins()
