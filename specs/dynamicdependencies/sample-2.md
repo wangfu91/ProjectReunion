@@ -2,12 +2,12 @@
 
 Variant of Sample 1 using RAII classes to manage packageDependencyId, packageDependencyContext and DLL lifetimes.
 
-MddPinPackageDependency will fail if there are no packages registered for the calling user satisfying the PackageDependency.
+```MddPinPackageDependency``` will fail if there are no packages registered for the calling user satisfying the PackageDependency.
 
 ## Win32
 
 ```c++
-#include <DynamicDependencies.h>
+#include <MsixDynamicDependency.hpp>
 #include <wil/resource.h>
 
 class MddPackageDependencyContextAndDll
@@ -81,13 +81,5 @@ HRESULT ManageMuffins(int& countOfMuffinsManaged)
     countOfMuffinsManaged = (*manageMuffins)();
 
     return S_OK;
-}
-```
-
-## WinRT
-
-```c#
-using Microsoft.ApplicationModel
-{
 }
 ```

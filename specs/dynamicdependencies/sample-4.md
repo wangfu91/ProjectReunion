@@ -9,7 +9,7 @@ The 'waffles' package dependency definition is pinned until the specified regist
 ## Win32
 
 ```c++
-#include <DynamicDependencies.h>
+#include <MsixDynamicDependency.hpp>
 #include <wil/resource.h>
 
 HRESULT SavePackageDependencyId(_In_ PCWSTR what, _In_ PCWSTR packageDependencyId);

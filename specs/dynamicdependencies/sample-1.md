@@ -2,12 +2,12 @@
 
 Contoso publishes a framework package that provides Muffin-managing functionality. At runtime, Fabrikam wants to use this functionality if available, so it adds a dynamic dependency for the Contoso.Muffins package. The dynamic dependency is removed once Fabrikam is done using the Contoso Muffin-managing functionality.
 
-MddPinPackageDependency will fail if there are no packages registered to the user that satisfy the PackageDependency.
+```MddPinPackageDependency``` will fail if there are no packages registered to the user that satisfy the PackageDependency.
 
 ## Win32
 
 ```c++
-#include <DynamicDependencies.h>
+#include <MsixDynamicDependency.hpp>
 #include <wil/resource.h>
 
 HRESULT ManageMuffins(int& countOfMuffinsManaged)

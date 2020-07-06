@@ -5,7 +5,7 @@ Contoso publishes a framework package. At runtime, LolzKittens wants to use Cont
 ## Win32
 
 ```c++
-#include <DynamicDependencies.h>
+#include <MsixDynamicDependency.hpp>
 #include <wil/resource.h>
 
 HRESULT LoadPackageDependencyId(_In_ PCWSTR what, wil::unique_ptr<WCHAR[]>& packageDependencyId);

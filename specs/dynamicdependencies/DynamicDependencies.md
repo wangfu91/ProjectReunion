@@ -14,7 +14,7 @@ This feature providse APIs to enable access to packaged content at runtime, rega
 
 Samples illustrating the DynamicDependency APIs
 * [Sample 1](sample-1.md) - Fabrikam app using Contosso's Muffins package [\[Win32\]](sample-1.md#win32) [\[WinRT\]](sample-1.md#winrt)
-* [Sample 2](sample-2.md) - Fabrikam app using Contosso's Muffins package with smart class helpers [\[Win32\]](sample-2.md#win32) [\[WinRT\]](sample-2.md#winrt)
+* [Sample 2](sample-2.md) - Fabrikam app using Contosso's Muffins package with smart class helpers [\[Win32\]](sample-2.md#win32)
 * [Sample 3](sample-3.md) - LolzKitten app using Contosso's Muffins package via transient package dependency [\[Win32\]](sample-3.md#win32) [\[WinRT\]](sample-3.md#winrt)
 * [Sample 4](sample-4.md) - LolzKitten Installer / Uninstaller with File+Registry LifetimeArtifacts [\[Win32\]](sample-4.md#win32) [\[WinRT\]](sample-4.md#winrt)
 * [Sample 5](sample-5.md) - LolzKitten app using PackageDependency pinned by LolzKitten Installer [\[Win32\]](sample-5.md#win32) [\[WinRT\]](sample-5.md#winrt)
