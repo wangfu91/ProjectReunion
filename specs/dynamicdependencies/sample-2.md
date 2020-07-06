@@ -4,7 +4,7 @@ Variant of Sample 1 using RAII classes to manage packageDependencyId, packageDep
 
 MddPinPackageDependency will fail if there are no packages registered for the calling user satisfying the PackageDependency.
 
-# Win32 2 - Fabrikam app using Contosso's Muffins package with smart class helpers
+## Win32
 
 ```c++
 #include <DynamicDependencies.h>
@@ -84,7 +84,7 @@ HRESULT ManageMuffins(int& countOfMuffinsManaged)
 }
 ```
 
-# WinRT 2 - Fabrikam app using Contosso's Muffins package with smart class helpers
+## WinRT
 
 ```c#
 using Microsoft.ApplicationModel

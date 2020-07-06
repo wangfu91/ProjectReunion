@@ -4,7 +4,7 @@ Contoso publishes framework packages. At runtime, LolzKittens wants to use Conto
 
 The package graph is updated for the remainder of the process' lifetime (i.e. the package dependencies are not explicitly removed).
 
-# Win32 - LolzKitten app ordering Packages in PackageGraph with prepend
+## Win32
 
 ```c++
 #include <DynamicDependencies.h>
@@ -32,7 +32,7 @@ HRESULT LoadPackageDependencyId(_In_ PCWSTR what, wil::unique_ptr<WCHAR[]>& pack
 }
 ```
 
-# WinRT - LolzKitten app ordering Packages in PackageGraph with prepend
+## WinRT
 
 ```c#
 using Microsoft.ApplicationModel

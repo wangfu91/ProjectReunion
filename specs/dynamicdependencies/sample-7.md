@@ -9,7 +9,7 @@ The package dependencies are added to the package graph with specific 'rank' val
 
 The package graph is updated for the remainder of the process' lifetime (i.e. the package dependencies are not explicitly removed).
 
-# Win32 7 - LolzKitten app ordering Packages in PackageGraph
+## Win32
 
 ```c++
 #include <DynamicDependencies.h>
@@ -51,7 +51,7 @@ HRESULT LoadPackageDependencyId(_In_ PCWSTR what, wil::unique_ptr<WCHAR[]>& pack
 }
 ```
 
-# WinRT 7 - LolzKitten app ordering Packages in PackageGraph
+## WinRT
 
 ```c#
 using Microsoft.ApplicationModel

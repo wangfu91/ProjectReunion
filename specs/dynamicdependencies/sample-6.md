@@ -2,7 +2,7 @@
 
 Contoso publishes a framework package. At runtime, LolzKittens wants to use Contoso's functionality but requires a 32bit framework (regardless if LolzKittens is 32 or 64bit and regardless the machine's cpu). The LolzKitten installer defines a package dependency with an architecture filter to ensure this.
 
-# Win32 6 - LolzKitten Installer / Uninstaller defining a 32bit PackageDependency
+## Win32
 
 ```c++
 #include <DynamicDependencies.h>
@@ -57,7 +57,7 @@ HRESULT SavePackageDependencyId(_In_ PCWSTR packageDependencyId)
 }
 ```
 
-# WinRT 6 - LolzKitten Installer / Uninstaller defining a 32bit PackageDependency
+## WinRT
 
 ```c#
 using Microsoft.ApplicationModel

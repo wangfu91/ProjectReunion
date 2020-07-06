@@ -2,7 +2,7 @@
 
 Contoso publishes a framework package. At runtime, LolzKittens wants to use Contoso's functionality as specified by the package dependency defined when LolzKittens was installed.
 
-# Win32 5 - LolzKitten app using PackageDependency pinned by LolzKitten Installer
+## Win32
 
 ```c++
 #include <DynamicDependencies.h>
@@ -46,7 +46,7 @@ HRESULT LoadPackageDependencyId(_In_ PCWSTR what, wil::unique_ptr<WCHAR[]>& pack
 }
 ```
 
-# WinRT 5 - LolzKitten app using PackageDependency pinned by LolzKitten Installer
+## WinRT
 
 ```c#
 using Microsoft.ApplicationModel

@@ -4,7 +4,7 @@ Contoso publishes a framework package. At runtime, LolzKittens wants to use Cont
 
 MddPinPackageDependency will fail if there are no packages registered for the calling user satisfying the PackageDependency.
 
-# Win32 3 - LolzKitten app using Contosso's Muffins package via transient package dependency
+## Win32
 
 ```c++
 #include <DynamicDependencies.h>
@@ -45,7 +45,7 @@ int __cdecl wmain(_In_ int argc, _In_reads_(argc) WCHAR * argv[])
 }
 ```
 
-# WinRT 3 - LolzKitten app using Contosso's Muffins package via transient package dependency
+## WinRT
 
 ```c#
 using Microsoft.ApplicationModel

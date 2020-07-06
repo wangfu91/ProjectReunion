@@ -6,7 +6,7 @@ The 'muffins' package dependency definition is pinned until the specified file i
 
 The 'waffles' package dependency definition is pinned until the specified registry key is deleted.
 
-# Win32 4 - LolzKitten Installer / Uninstaller with File+Registry LifetimeArtifacts
+## Win32
 
 ```c++
 #include <DynamicDependencies.h>
@@ -127,7 +127,7 @@ HRESULT LoadPackageDependencyId(_In_ PCWSTR what, wil::unique_ptr<WCHAR[]>& pack
 }
 ```
 
-# WinRT 4 - LolzKitten Installer / Uninstaller with File+Registry LifetimeArtifacts
+## WinRT
 
 ```c#
 using Microsoft.ApplicationModel

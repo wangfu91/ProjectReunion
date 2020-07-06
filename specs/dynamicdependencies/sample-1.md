@@ -4,7 +4,7 @@ Contoso publishes a framework package that provides Muffin-managing functionalit
 
 MddPinPackageDependency will fail if there are no packages registered to the user that satisfy the PackageDependency.
 
-# Win32 - Fabrikam app using Contosso's Muffins package
+## Win32
 
 ```c++
 #include <DynamicDependencies.h>
@@ -53,7 +53,7 @@ HRESULT ManageMuffins(int& countOfMuffinsManaged)
 }
 ```
 
-# WinRT - Fabrikam app using Contosso's Muffins package
+## WinRT
 
 ```c#
 using Microsoft.ApplicationModel
