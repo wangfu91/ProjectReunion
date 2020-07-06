@@ -2,9 +2,9 @@
 
 MSIX supports the ability for packaged applications to access components and other files distributed as Framework packages. However this functionality provides a rather 'static' world view, where dependencies are known at development time and resolved at install-time. There is no support for runtime to define a Framework dependency based on machine state, user interface or other post-development factors. Access to Framework package content is also limited access to packaged applications; non-packaged applications cannot use content provided via Framework packages.
 
-Microsoft-internal task 23447728
+Microsoft-internal task [23447728](https://task.ms/23447728)
 
-This is the spec for proposal microsoft/project-reunion#89
+This is the spec for proposal microsoft/projectreunion#89
 
 # Description
 
