@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{da19e23d-ac19-4987-8d1c-69f2a773c656}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="$(MSBuildThisFileDirectory)M.AM.Package.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)M.AM.FindPackageOptions.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)M.AM.FindRelatedPackageOptions.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)M.AM.Package.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)M.AM.PackageApplications.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)M.AM.PackageContentGroups.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)M.AM.PackageDisplayInfo.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)M.AM.PackageFamilyNameTuple.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)M.AM.PackageGraph.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)M.AM.PackageIdentity.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)M.AM.PackageInstallInfo.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)M.AM.PackageLocation.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)M.AM.FindPackageOptions.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)M.AM.FindRelatedPackageOptions.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)M.AM.Package.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)M.AM.PackageApplications.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)M.AM.PackageContentGroups.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)M.AM.PackageDisplayInfo.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)M.AM.PackageFamilyNameTuple.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)M.AM.PackageGraph.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)M.AM.PackageIdentity.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)M.AM.PackageInstallInfo.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)M.AM.PackageLocation.h" />
+  </ItemGroup>
+</Project>
